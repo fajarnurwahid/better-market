@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'Campton';
+    src: url(font/Campton-LightDEMO.otf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Campton';
+    src: url(font/Campton-BoldDEMO.otf);
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+:root {
+    --primary: #084B3E;
+    --secondary: #F9E2BA;
+    --green: #00C38B;
+    --white: #fff;
+    --black: #343434;
+    --gray: #BDBDBD;
+}
+body {
+    font-family: 'Campton', sans-serif;
+    min-height: 100vh;
+    background-image: url(img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+
+
+/* start: Signup */
+.signup-wrapper {
+    border-radius: 50px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: .8fr 1fr;
+    max-width: 1400px;
+    width: 100%;
+}
+.signup-left {
+    background-color: var(--primary);
+    padding: 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.signup-title {
+    color: var(--secondary);
+    font-size: 39px;
+    font-weight: 700;
+    margin-top: auto;
+}
+.signup-right {
+    background-color: var(--white);
+    padding: 54px;
+    color: var(--black);
+}
+.signup-form-title {
+    font-size: 34px;
+    margin-bottom: 64px;
+    font-weight: 700;
+}
+.signup-right form {
+    margin-bottom: 96px;
+}
+.signup-form-group {
+    position: relative;
+    margin-bottom: 32px;
+}
+.signup-form-control {
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid var(--black);
+    padding: 16px 0;
+    outline: none;
+    transition: all .3s;
+}
+.signup-form-control:focus {
+    border-bottom-color: var(--primary);
+}
+.signup-form-group label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: var(--black);
+    transition: all .3s;
+}
+.signup-form-control:not(:placeholder-shown) + label,
+.signup-form-control:focus + label {
+    top: 10%;
+    font-size: 13px;
+}
+.signup-form-control:focus + label {
+    color: var(--primary);
+}
+.signup-submit-button {
+    background-color: var(--green);
+    color: var(--white);
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 24px 16px;
+    width: 100%;
+    transition: all .3s;
+}
+.signup-submit-button:hover {
+    background-color: var(--primary);
+}
+.signup-right p {
+    color: var(--gray);
+}
+.signup-right p a {
+    color: #19B07E;
+    text-decoration: none;
+}
+/* end: Signup */
+
+
+
+@media screen and (max-width: 991px) {
+    .signup-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .signup-left {
+        order: 1;
+    }
+    .signup-right {
+        order: 0;
+    }
+    .signup-title {
+        font-size: 32px;
+        margin-top: 48px;
+    }
+    .signup-right,
+    .signup-left {
+        padding: 54px 32px;
+    }
+}
